@@ -68,5 +68,9 @@ def recomendar():
     # print("response: ", response)
     return jsonify({"processed_text": response})
 
+@app.route('/', methods=['GET'])
+def healthCheck():
+    return jsonify({"processed_text": "Todo bien:)"})
+
 if __name__ == '__main__':
     app.run(debug=True) # Ejecutar la aplicación Flask en modo debug para facilitar el desarrollo
