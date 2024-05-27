@@ -47,7 +47,7 @@ def preguntar(prompt):
             "content": prompt
         }
     ],
-    model="gpt-3.5-turbo")
+    model="gpt-4o")
 
     return response.choices[0].message.content.strip()
 
@@ -61,11 +61,11 @@ def recomendar():
     data = request.get_json()
     user_input = data['prompt']
     # Definición de instrucciones
-    Instrucciones = "Instrucciones: Eres un asistente virtual que solamente recomienda algunos de las siguiente salas y/o experiencias en un laboratorio dependiendo de lo que el usuario diga y la descripción del lugar. Las experiencias son:\n"
+    Instrucciones = "Instrucciones: Eres un asistente virtual que solamente recomienda algunos de las siguiente salas y/o experiencias en un laboratorio dependiendo de lo que el usuario diga, el título y la descripción del lugar. Asegurate que de cada recomendación que hagas el título o la descripción tengan sentido a lo que pide el usuario. Las experiencias son:\n"
     Instrucciones += experiencias
     Instrucciones += "\n Las salas son:\n"
     Instrucciones += salas
-    Instrucciones += "Es importante que solo respondas con el Tipo y el Id de las 3 recomendaciones que más se acerquen a lo que pide el usuario a manera de lista de recomendaciones, con el siguiente formato (usando un ejemplo): 1. Tipo: experiencias, Id: 1, Hackers Event y así sucesivamente con las 3, el tipo debe estar en minusculas y en plural (osea solo -experiencias- o -salas-). También es importante que siempre des 3 recomendaciones, PERO es mucho más importante que cuando ninguna experiencia o sala del catálogo es cercana a lo que pide el usuario debes regresar una sola respuesta con lo siguiente _0. Tipo: Error, Id: 0_. SOLO PUEDES HACER UNA RESPUESTA A LA VEZ, es decir no puedes responder por el usuario. Recuerda que si ninguna sala o experiencia es una buena recomendación para el usuario entonces responde _0. Tipo: Error, Id: 0_ \n"
+    Instrucciones += "Es importante que solo respondas con el Tipo y el Id de preferiblemente las 3 recomendaciones que más se acerquen a lo que pide el usuario a manera de lista de recomendaciones, con el siguiente formato (usando un ejemplo): 1. Tipo: experiencias, Id: 1, Hackers Event y así sucesivamente con las 3, el tipo debe estar en minusculas y en plural (osea solo -experiencias- o -salas-). También es importante que máximo des 3 recomendaciones, PERO es mucho más importante que cuando ninguna experiencia o sala del catálogo se relaciona a lo que pide el usuario debes regresar una sola respuesta con lo siguiente _0. Tipo: Error, Id: 0_. SOLO PUEDES HACER UNA RESPUESTA A LA VEZ, es decir no puedes responder por el usuario. Recuerda que si ninguna sala o experiencia es una buena recomendación para el usuario entonces responde _0. Tipo: Error, Id: 0_ \n"
 
     conversacion = Instrucciones
     conversacion += "\nUsuario: " + user_input + "\nAI:" 
