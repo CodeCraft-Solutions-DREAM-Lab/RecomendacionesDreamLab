@@ -1,4 +1,5 @@
 [![Build and deploy Python app to Azure Web App - Recomendaciones](https://github.com/CodeCraft-Solutions-DREAM-Lab/RecomendacionesDreamLab/actions/workflows/main_recomendaciones.yml/badge.svg)](https://github.com/CodeCraft-Solutions-DREAM-Lab/RecomendacionesDreamLab/actions/workflows/main_recomendaciones.yml)
+
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 
 # Chatbot de recomendaciones del DREAM Lab
