@@ -17,9 +17,9 @@ client = OpenAI(api_key=API_KEY)
 def consultar_api(tipo):
     url = "https://dreamlab-api.azurewebsites.net/"
     if tipo == "experiencias":
-        url += "experiencias"
+        url += "experiencias/experienciasActivas"
     elif tipo == "salas":
-        url += "salas"
+        url += "salas/salasActivas"
     else:
         return "Error en el tipo de tabla a consultar"
 
@@ -33,7 +33,6 @@ def consultar_api(tipo):
                 texto += f"Tipo: Experiencia, Id: {item['idExperiencia']}, {item['nombre']}: {item['descripcion']}. \n"
             elif 'idSala' in item:
                 texto += f"Tipo: Sala, Id: {item['idSala']}, {item['nombre']}: {item['descripcion']}. \n"
-
         return texto
     else:
         return "Error al obtener los datos de la API."
