@@ -8,10 +8,11 @@
 
 -   Se puede consultar el frontend en el repositorio de [Frontend](https://github.com/CodeCraft-Solutions-DREAM-Lab/Front-End).
 -   Asimismo, el backend se puede encontrar en el repositorio de [Backend](https://github.com/CodeCraft-Solutions-DREAM-Lab/Back-End).
+-   El resto de los repositorios del proyecto se pueden encontrar en [CodeCraft Solutions: D.R.E.A.M. Lab](https://github.com/CodeCraft-Solutions-DREAM-Lab).
 
 ## Despliegue
 
-Este API se encuentra desplegado como un App Service de Azure en la siguiente liga: [recomendaciones.azurewebsites.net](recomendaciones.azurewebsites.net).
+Este API se encuentra desplegado como un App Service de Azure en la siguiente liga: [https://recomendaciones.azurewebsites.net](https://recomendaciones.azurewebsites.net).
 
 ## Configuración
 
